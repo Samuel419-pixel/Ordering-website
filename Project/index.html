@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickShop - Simple Ordering</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shopping-bag"></i>
+                <h1>Adewale QuickShop</h1>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="hero">
+            <h2>Order Your Favorite Items Online</h2>
+            <p>Simple, fast, and convenient shopping experience</p>
+        </div>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <h2>Our Products</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will appear here -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fas fa-credit-card"></i> Checkout Now
+            </button>
+            <button class="continue-shopping" onclick="toggleCart()">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Order Confirmation</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h4>Thank you for your order!</h4>
+                <p>Your order has been placed successfully.</p>
+                <div class="order-details">
+                    <p><strong>Order ID:</strong> <span id="orderId">#ORD-784239</span></p>
+                    <p><strong>Total Amount:</strong> <span id="orderTotal">$0.00</span></p>
+                    <p><strong>Estimated Delivery:</strong> 30-45 minutes</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeModal()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 QuickShop - Simple Ordering System | Made with <i class="fas fa-heart"></i></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
